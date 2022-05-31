@@ -24,13 +24,13 @@ contract NFT is ERC721, Ownable {
         baseTokenURI = _baseTokenURI;
     }
 
-    function buyNft(uint256 _tokenId) public payable {
+    function mintNft(uint256 _tokenId) public payable {
         require(msg.value >= nft_price);
         _safeMint(msg.sender, _tokenId);
         emit MintNft(msg.sender, _tokenId);
     }
 
-    function getNftsFromOwner(address _owner)
+    function _getNftsFromOwner(address _owner)
         external
         view
         returns (uint256[] memory)

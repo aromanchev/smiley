@@ -1,15 +1,15 @@
 {
   "name": "nft-solidity-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Dapp in React and Solidity",
   "main": "index.js",
   "scripts": {
     "build": "npx hardhat clean && npx hardhat run scripts/deploy.js --network rinkeby",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx hardhat test"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@alch/alchemy-web3": "^1.4.2",
     "@nomiclabs/hardhat-ethers": "^2.0.6",

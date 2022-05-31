@@ -1,6 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 require('dotenv').config();
+
 const { API_URL, PRIVATE_KEY, ETHERSCAN_API } = process.env;
 
 

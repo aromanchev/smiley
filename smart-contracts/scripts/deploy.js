@@ -1,7 +1,9 @@
 const hre = require("hardhat");
+
 const { BASE_TOKEN_URI } = process.env;
 
 async function deploy() {  
+  
   const [owner] = await hre.ethers.getSigners();
 
   const contractFactory = await hre.ethers.getContractFactory("NFT");
