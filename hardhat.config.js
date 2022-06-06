@@ -23,9 +23,15 @@ module.exports = {
     rinkeby: {
       url: API_URL,
       accounts: [PRIVATE_KEY]
-    }
+    },
   },
   etherscan: {
     apiKey: ETHERSCAN_API
+  },
+  paths: {
+    artifacts: './src/artifacts'
+  },
+  mocha: {
+    parallel: true
   }
 };

@@ -12,7 +12,7 @@ contract NFT is ERC721, Ownable {
 
     event MintNft(address senderAddress, uint256 nftToken);
 
-    constructor(string memory baseURI) ERC721("simple nft", "NFT") {
+    constructor(string memory baseURI) ERC721("Ruz1kNFT", "NFT") {
         setBaseURI(baseURI);
     }
 
