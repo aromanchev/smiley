@@ -5,18 +5,24 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract NFT is ERC721, Ownable {
-    uint256 public constant nft_price = 0.00005 ether;
     string public baseTokenURI;
 
-    mapping(address => uint256[]) nftsOwner;
+    struct Ruz1kNft {
+        uint256 tokenId;
+        uint256 price;
+        address payable mintedBy;
+    }
+
+    mapping(address => uint256[]) public nftsOwner;
+    mapping(uint256 => Ruz1kNft) public allNfts;
 
     event MintNft(address senderAddress, uint256 nftToken);
 
-    constructor(string memory baseURI) ERC721("Ruz1kNFT", "NFT") {
-        setBaseURI(baseURI);
+    constructor(string memory _baseURI) ERC721("Ruz1kNFT", "NFT") {
+        setBaseURI(_baseURI);
     }
 
-    function _baseURI() internal view virtual override returns (string memory) {
+    function baseURI() internal view virtual returns (string memory) {
         return baseTokenURI;
     }
 
@@ -24,18 +30,35 @@ contract NFT is ERC721, Ownable {
         baseTokenURI = _baseTokenURI;
     }
 
-    function mintNft(uint256 _tokenId) public payable {
-        require(msg.value >= nft_price);
+    function mintNft(uint256 _tokenId, uint256 _price)
+        public
+        payable
+        onlyOwner
+    {
         _safeMint(msg.sender, _tokenId);
         emit MintNft(msg.sender, _tokenId);
+        Ruz1kNft memory newNft = Ruz1kNft(
+            _tokenId,
+            _price,
+            payable(msg.sender)
+        );
+        allNfts[_tokenId] = newNft;
     }
 
-    function _getNftsFromOwner(address _owner)
+    function getNftsFromOwner(address _owner)
         external
         view
         returns (uint256[] memory)
     {
         return nftsOwner[_owner];
+    }
+
+    function getNftFromTokenId(uint256 _tokenId)
+        public
+        view
+        returns (Ruz1kNft memory)
+    {
+        return allNfts[_tokenId];
     }
 
     function withdraw() public payable onlyOwner {
