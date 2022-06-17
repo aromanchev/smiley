@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-
-import { useWeb3 } from "../../hooks/web3";
+import { useWeb3 } from "../../hooks";
 
 const Introduce = () => {
   const { mint } = useWeb3();
@@ -20,7 +18,7 @@ const Introduce = () => {
         dolor sit amet, Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet,
         Lorem ipsum dolor sit amet
       </p>
-      <button onClick={() => handleClick(2)}>Go to OpenSea</button>
+      <button onClick={() => handleClick(3)}>MintNFT</button>
     </div>
   );
 };

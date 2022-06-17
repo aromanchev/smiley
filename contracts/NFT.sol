@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract NFT is ERC721, Ownable {
     string public baseTokenURI;
+    uint256 public constant PRICE = 0.00005 ether;
 
     struct Ruz1kNft {
         uint256 tokenId;
@@ -15,6 +16,7 @@ contract NFT is ERC721, Ownable {
 
     mapping(address => uint256[]) public nftsOwner;
     mapping(uint256 => Ruz1kNft) public allNfts;
+    mapping(uint256 => bool) public tokenIdExists;
 
     event MintNft(address senderAddress, uint256 nftToken);
 
@@ -30,18 +32,13 @@ contract NFT is ERC721, Ownable {
         baseTokenURI = _baseTokenURI;
     }
 
-    function mintNft(uint256 _tokenId, uint256 _price)
-        public
-        payable
-        onlyOwner
-    {
+    function mintNft(uint256 _tokenId) public payable onlyOwner {
+        require(msg.sender != address(0));
+        require(!tokenIdExists[_tokenId]);
+        tokenIdExists[_tokenId] = true;
         _safeMint(msg.sender, _tokenId);
         emit MintNft(msg.sender, _tokenId);
-        Ruz1kNft memory newNft = Ruz1kNft(
-            _tokenId,
-            _price,
-            payable(msg.sender)
-        );
+        Ruz1kNft memory newNft = Ruz1kNft(_tokenId, PRICE, payable(msg.sender));
         allNfts[_tokenId] = newNft;
     }
 

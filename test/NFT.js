@@ -8,11 +8,9 @@ describe("Testing NFT smart contract", () => {
   let nftContract;
   
   beforeEach(async () => {
-
     [owner] = await ethers.getSigners();
     const NFT = await ethers.getContractFactory("NFT");
-    nftContract =  await NFT.deploy(BASE_TOKEN_URI)
-
+    nftContract =  await NFT.deploy(BASE_TOKEN_URI);
   });
 
   describe("Base token uri tests", () => {
@@ -21,9 +19,8 @@ describe("Testing NFT smart contract", () => {
     });
     
     it("Set base token uri", async () => {
-      const setBaseURITx = await nftContract.setBaseURI('Test');
-      await setBaseURITx.wait();
+      await nftContract.setBaseURI('Test');
       expect(await nftContract.baseTokenURI()).to.equal('Test');
     });
-  })
+  });
 });

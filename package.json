@@ -1,7 +1,7 @@
 {
   "name": "nft-solidity-react",
   "version": "1.0.0",
-  "description": "Dapp in React and Solidity",
+  "description": "dApp in React and Solidity",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
