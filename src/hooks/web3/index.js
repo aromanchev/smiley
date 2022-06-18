@@ -21,7 +21,7 @@ export const useWeb3 = () => {
   }
 
   const mint = async (tokenId) => {
-    return await contract.mintNft(tokenId)
+    return await contract.mintNft(tokenId, {value: ethers.utils.parseEther("0.00005")})
     .then((data) => data)
     .catch(err => err);
   }

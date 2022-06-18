@@ -13,9 +13,9 @@ async function deploy() {
 
   await contract.deployed();
 
-  const config = `export const contractAddress = "${contract.address}"`
-  const data = JSON.stringify(config)
-  writeFileSync('src/contract-address.ts', JSON.parse(data))
+  const config = `export const contractAddress = "${contract.address}"`;
+  const data = JSON.stringify(config);
+  writeFileSync('src/contract-address.ts', JSON.parse(data));
 
   console.log("Contract deployed to:", contract.address);
 }

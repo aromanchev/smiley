@@ -18,7 +18,7 @@ const Introduce = () => {
         dolor sit amet, Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet,
         Lorem ipsum dolor sit amet
       </p>
-      <button onClick={() => handleClick(3)}>MintNFT</button>
+      <button onClick={() => handleClick(8)}>MintNFT</button>
     </div>
   );
 };

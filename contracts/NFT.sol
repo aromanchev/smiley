@@ -20,11 +20,11 @@ contract NFT is ERC721, Ownable {
 
     event MintNft(address senderAddress, uint256 nftToken);
 
-    constructor(string memory _baseURI) ERC721("Ruz1kNFT", "NFT") {
-        setBaseURI(_baseURI);
+    constructor(string memory baseURI) ERC721("RNFT", "NFT") {
+        setBaseURI(baseURI);
     }
 
-    function baseURI() internal view virtual returns (string memory) {
+    function _baseURI() internal view virtual override returns (string memory) {
         return baseTokenURI;
     }
 
@@ -35,9 +35,9 @@ contract NFT is ERC721, Ownable {
     function mintNft(uint256 _tokenId) public payable onlyOwner {
         require(msg.sender != address(0));
         require(!tokenIdExists[_tokenId]);
-        tokenIdExists[_tokenId] = true;
         _safeMint(msg.sender, _tokenId);
         emit MintNft(msg.sender, _tokenId);
+        tokenIdExists[_tokenId] = true;
         Ruz1kNft memory newNft = Ruz1kNft(_tokenId, PRICE, payable(msg.sender));
         allNfts[_tokenId] = newNft;
     }
