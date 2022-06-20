@@ -6,10 +6,9 @@ import { Introduce } from "./blocks";
 import "./App.css";
 
 const App = () => {
-  const { getAccount, getBaseURI } = useWeb3();
+  const { getAccount } = useWeb3();
   useEffect(() => {
     getAccount();
-    getBaseURI();
   }, []);
   return (
     <div className="web3-dApp">
