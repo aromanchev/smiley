@@ -15,7 +15,15 @@ export const useWeb3 = () => {
     signer
   );
 
+  const getAccounts = async () => {
+    return await provider.listAccounts();
+  }
+
   const getAccount = async () => {
+    const accounts = await getAccounts();
+    if (accounts.length) {
+      return;
+    }
     return await ethereum
       .request({ method: "eth_requestAccounts" })
       .then((account) => {
@@ -49,6 +57,7 @@ export const useWeb3 = () => {
     getAccount,
     getBaseURI,
     setBaseURI,
+    getAccounts,
     mint,
   };
 };
