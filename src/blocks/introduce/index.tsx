@@ -8,7 +8,7 @@ const Introduce = () => {
   };
 
   return (
-    <div className="web3-block introduce-block">
+    <div className="container introduce-block">
       <h1>Welcome to the DApp!</h1>
       <p>
         Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet Lorem ipsum dolor

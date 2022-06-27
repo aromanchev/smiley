@@ -1,0 +1,13 @@
+header {
+    padding: 16px 0;
+    background-color: #483d8b;
+    color: white;
+    ul {
+        display: flex;
+        padding: 0;
+        & li {
+            font-weight: 600;
+            list-style: none;
+        }
+    }
+}
