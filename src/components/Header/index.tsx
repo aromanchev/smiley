@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react";
-import { useWeb3 } from "../../hooks";
-
 import "./index.scss";
 
-const Header = (): JSX.Element => {
+const Header = () => {
+  const redirectToGithub = () => {
+    window.open("https://github.com/ruz1k/smiley");
+  };
   return (
     <header>
       <ul className="container">
-        <li>RUZ1KMP</li>
+        <li>
+          created by <a onClick={redirectToGithub}>ruz1k</a>.
+        </li>
+        <li>SMILEY</li>
+        <li>© 2022</li>
       </ul>
     </header>
   );

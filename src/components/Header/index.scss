@@ -2,12 +2,27 @@ header {
     padding: 16px 0;
     background-color: #483d8b;
     color: white;
+    margin-bottom: 32px;
     ul {
         display: flex;
+        flex-wrap: wrap;
         padding: 0;
         & li {
+            flex: 0 0 48%;
             font-weight: 600;
             list-style: none;
+            & a {
+                cursor: pointer;
+                color: #fff;
+                text-decoration: underline;
+            }
+            &:nth-child(2) {
+                flex: 0 0 47%;
+            }
+            &:last-child {
+                flex: 1;
+                max-width: fit-content;
+            }
         }
     }
 }

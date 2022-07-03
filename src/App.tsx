@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { useWeb3 } from "./hooks";
 
-import { Introduce } from "./blocks";
-
 import { Header } from "./components";
+import { Market } from "./blocks";
 
 import "./styles/App.scss";
 
@@ -13,9 +12,9 @@ const App = () => {
     getAccount();
   }, []);
   return (
-    <div className="web3-dApp">
+    <div className="smiley-dApp">
       <Header />
-      <Introduce />
+      <Market />
     </div>
   );
 };

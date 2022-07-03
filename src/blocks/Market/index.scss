@@ -1,0 +1,44 @@
+.smiley-market {
+  & h2 {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 56px;
+  }
+  &-container {
+    display: flex;
+    flex-flow: wrap;
+    &-card {
+      max-width: 400px;
+      margin-right: 75px;
+      margin-bottom: 48px;
+      &:nth-child(3n + 3) {
+        margin-right: 0;
+      }
+      & img {
+        object-fit: cover;
+      }
+      &-info {
+        & button {
+          font-weight: 800;
+          font-size: 18px;
+          background-color: #483d8b;
+          border: 1px solid;
+          color: #fff;
+          padding: 4px 28px 4px 8px;
+        }
+        &-cost {
+          display: flex;
+          margin-bottom: 24px;
+          & svg {
+            margin-left: -8px;
+            margin-right: 8px;
+          }
+          & span {
+            font-weight: 800;
+            margin-top: 7px;
+          }
+        }
+      }
+    }
+  }
+}
