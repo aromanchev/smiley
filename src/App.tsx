@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useWeb3 } from "./hooks";
 
 import { Header } from "./components";
