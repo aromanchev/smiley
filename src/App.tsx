@@ -1,20 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useWeb3 } from "./hooks";
 
-import { Header } from "./components";
+import { Header, WalletModal } from "./components";
 import { Market } from "./blocks";
 
 import "./styles/App.scss";
 
 const App = () => {
-  const { getAccount } = useWeb3();
+  const { getAccount, isConnected } = useWeb3();
+  const [connected, setConnected] = useState(true);
   useEffect(() => {
     getAccount();
+    isConnected().then((res) => setConnected(res));
   }, []);
   return (
     <div className="smiley-dApp">
       <Header />
       <Market />
+      {!connected && <WalletModal />}
     </div>
   );
 };

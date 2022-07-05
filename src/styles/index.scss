@@ -11,6 +11,11 @@ button {
   border: none;
   font-size: 16px;
   border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    background: green !important;
+  }
 }
 
 h1,

@@ -45,13 +45,13 @@ export const useWeb3 = () => {
     return await contract.setBaseURI(newURI);
   };
 
-  const accountsLength = async () => {
+  const isConnected = async () => {
     const addresses = await provider.listAccounts();
-    return addresses.length;
+    return !!addresses.length;
   };
 
   return {
-    accountsLength,
+    isConnected,
     getAccount,
     getBaseURI,
     setBaseURI,
