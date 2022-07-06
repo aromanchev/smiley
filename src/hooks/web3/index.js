@@ -17,7 +17,7 @@ export const useWeb3 = () => {
     return await provider.listAccounts();
   }
 
-  const getAccount = async () => {
+  const connectAccount = async () => {
     const accounts = await getAccounts();
     if (accounts.length) {
       return;
@@ -44,7 +44,7 @@ export const useWeb3 = () => {
 
   return {
     isConnected,
-    getAccount,
+    connectAccount,
     getAccounts,
     mint,
   };

@@ -7,10 +7,10 @@ import { Market } from "./blocks";
 import "./styles/App.scss";
 
 const App = () => {
-  const { getAccount, isConnected } = useWeb3();
+  const { connectAccount, isConnected } = useWeb3();
   const [connected, setConnected] = useState(true);
   useEffect(() => {
-    getAccount();
+    connectAccount();
     isConnected().then((res) => setConnected(res));
   }, []);
   return (
