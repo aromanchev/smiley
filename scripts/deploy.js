@@ -7,7 +7,7 @@ async function deploy() {
   
   const [owner] = await hre.ethers.getSigners();
 
-  const contractFactory = await hre.ethers.getContractFactory("NFT");
+  const contractFactory = await hre.ethers.getContractFactory("SmileyNFT");
 
   const contract = await contractFactory.deploy(BASE_TOKEN_URI);
 

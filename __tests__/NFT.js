@@ -9,8 +9,9 @@ describe("Testing NFT smart contract", () => {
   
   beforeEach(async () => {
     [owner] = await ethers.getSigners();
-    const NFT = await ethers.getContractFactory("NFT");
+    const NFT = await ethers.getContractFactory("SmileyNFT");
     nftContract =  await NFT.deploy(BASE_TOKEN_URI);
+    await nftContract.deployed();
   });
 
   describe("Base token uri tests", () => {

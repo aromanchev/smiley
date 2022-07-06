@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-import NFTContract from "../../artifacts/contracts/NFT.sol/NFT.json";
+import NFTContract from "../../artifacts/contracts/NFT.sol/SmileyNFT.json";
 import { contractAddress } from "../../contract-address";
 
 export const useWeb3 = () => {
@@ -37,14 +37,6 @@ export const useWeb3 = () => {
       .catch((err) => err);
   };
 
-  const getBaseURI = async () => {
-    return await contract.baseTokenURI();
-  };
-
-  const setBaseURI = async (newURI) => {
-    return await contract.setBaseURI(newURI);
-  };
-
   const isConnected = async () => {
     const addresses = await provider.listAccounts();
     return !!addresses.length;
@@ -53,8 +45,6 @@ export const useWeb3 = () => {
   return {
     isConnected,
     getAccount,
-    getBaseURI,
-    setBaseURI,
     getAccounts,
     mint,
   };

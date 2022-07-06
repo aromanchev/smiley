@@ -4,23 +4,23 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract NFT is ERC721, Ownable {
+contract SmileyNFT is ERC721, Ownable {
     string public baseTokenURI;
     uint256 public constant PRICE = 0.00005 ether;
 
-    struct Ruz1kNft {
+    struct Smiley {
         uint256 tokenId;
         uint256 price;
         address payable mintedBy;
     }
 
     mapping(address => uint256[]) public nftsOwner;
-    mapping(uint256 => Ruz1kNft) public allNfts;
+    mapping(uint256 => Smiley) public allNfts;
     mapping(uint256 => bool) public tokenIdExists;
 
     event MintNft(address senderAddress, uint256 nftToken);
 
-    constructor(string memory baseURI) ERC721("RNFT", "NFT") {
+    constructor(string memory baseURI) ERC721("Smiley", "NFT") {
         setBaseURI(baseURI);
     }
 
@@ -38,7 +38,7 @@ contract NFT is ERC721, Ownable {
         _safeMint(msg.sender, _tokenId);
         emit MintNft(msg.sender, _tokenId);
         tokenIdExists[_tokenId] = true;
-        Ruz1kNft memory newNft = Ruz1kNft(_tokenId, PRICE, payable(msg.sender));
+        Smiley memory newNft = Smiley(_tokenId, PRICE, payable(msg.sender));
         allNfts[_tokenId] = newNft;
     }
 
@@ -53,7 +53,7 @@ contract NFT is ERC721, Ownable {
     function getNftFromTokenId(uint256 _tokenId)
         public
         view
-        returns (Ruz1kNft memory)
+        returns (Smiley memory)
     {
         return allNfts[_tokenId];
     }
