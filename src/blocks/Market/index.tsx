@@ -4,9 +4,9 @@ import "./index.scss";
 import { smileyData } from "./kit";
 
 const Market = () => {
-  const { mint } = useWeb3();
-  const mintNft = async (tokenId: number) => {
-    await mint(tokenId);
+  const { buy } = useWeb3();
+  const buyNft = async (tokenId: number) => {
+    await buy(tokenId);
   };
   return (
     <div className="container smiley-market">
@@ -21,7 +21,7 @@ const Market = () => {
                 <ETHIcon width={32} height={32} />
                 <span>0,08 ETH</span>
               </div>
-              <button onClick={() => mintNft(id)}>mint.</button>
+              <button onClick={() => buyNft(id)}>buy.</button>
             </div>
           </div>
         ))}

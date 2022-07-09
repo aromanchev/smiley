@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 
-import NFTContract from "../../artifacts/contracts/NFT.sol/SmileyNFT.json";
+import NFTContract from "../../artifacts/contracts/Smiley.sol/SmileyNFT.json";
 import { contractAddress } from "../../contract-address";
 
 export const useWeb3 = () => {
@@ -32,7 +32,14 @@ export const useWeb3 = () => {
 
   const mint = async (tokenId) => {
     return await contract
-      .mintNft(tokenId, { value: ethers.utils.parseEther("0.00005") })
+      .mintNft(tokenId, { value: ethers.utils.parseEther("0.00000005") })
+      .then((data) => data)
+      .catch((err) => err);
+  };
+
+  const buy = async (tokenId) => {
+    return await contract
+      .buyNft(tokenId, { value: ethers.utils.parseEther("0.0003") })
       .then((data) => data)
       .catch((err) => err);
   };
@@ -47,5 +54,6 @@ export const useWeb3 = () => {
     connectAccount,
     getAccounts,
     mint,
+    buy
   };
 };
