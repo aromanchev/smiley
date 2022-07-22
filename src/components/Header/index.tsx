@@ -8,7 +8,7 @@ const Header = () => {
     <header>
       <ul className="container">
         <li>
-          created by <a onClick={redirectToGithub}>ruz1k</a>.
+          created by <a onClick={redirectToGithub}>aromanchev</a>.
         </li>
         <li>SMILEY</li>
         <li>© 2022</li>
