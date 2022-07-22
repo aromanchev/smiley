@@ -32,14 +32,14 @@ export const useWeb3 = () => {
 
   const mint = async (tokenId) => {
     return await contract
-      .mintNft(tokenId, { value: ethers.utils.parseEther("0.00000005") })
+      .mintNft(tokenId, { value: ethers.utils.parseEther("0.0000000000001") })
       .then((data) => data)
       .catch((err) => err);
   };
 
   const buy = async (tokenId) => {
     return await contract
-      .buyNft(tokenId, { value: ethers.utils.parseEther("0.0003") })
+      .buyNft(tokenId, { value: ethers.utils.parseEther("0.008") })
       .then((data) => data)
       .catch((err) => err);
   };

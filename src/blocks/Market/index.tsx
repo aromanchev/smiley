@@ -19,7 +19,7 @@ const Market = () => {
               <h3>{name}</h3>
               <div className="smiley-market-container-card-info-cost">
                 <ETHIcon width={32} height={32} />
-                <span>0,08 ETH</span>
+                <span>0,008 ETH</span>
               </div>
               <button onClick={() => buyNft(id)}>buy.</button>
             </div>

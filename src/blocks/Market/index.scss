@@ -21,10 +21,12 @@
         & button {
           font-weight: 800;
           font-size: 18px;
-          background-color: #483d8b;
-          border: 1px solid;
+          background-color: #5b64c7;
           color: #fff;
           padding: 4px 28px 4px 8px;
+          &:hover {
+            background-color: #293191 !important;
+          }
         }
         &-cost {
           display: flex;

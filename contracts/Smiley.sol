@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract SmileyNFT is ERC721, Ownable {
     string public baseTokenURI;
-    uint256 public constant PRICE = 0.00005 ether;
+    uint256 public constant PRICE = 0.008 ether;
 
     struct Smiley {
         uint256 tokenId;
