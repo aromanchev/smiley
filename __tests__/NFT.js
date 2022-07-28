@@ -5,11 +5,10 @@ const { BASE_TOKEN_URI } = process.env;
 
 describe("Testing NFT smart contract", () => {
   let owner;
-  let bob;
   let nftContract;
 
   beforeEach(async () => {
-    [owner, bob] = await ethers.getSigners();
+    [owner] = await ethers.getSigners();
     const NFT = await ethers.getContractFactory("SmileyNFT");
     nftContract = await NFT.deploy(BASE_TOKEN_URI);
   });
@@ -20,17 +19,6 @@ describe("Testing NFT smart contract", () => {
 
   it("should pass when owner want mint", async () => {
     await nftContract.mintNft(1);
-    expect(await nftContract.allNfts(1)).to.have.keys([
-      "0",
-      "1",
-      "2",
-      "3",
-      "4",
-      "mintedBy",
-      "owner",
-      "previousOwner",
-      "price",
-      "tokenId",
-    ]);
+    expect(await nftContract.allNfts(1)).to.exist
   });
 });

@@ -6,6 +6,7 @@ import { smileyData } from "./kit";
 const Market = () => {
   const { buy } = useWeb3();
   const buyNft = async (tokenId: number) => {
+    // await mint(tokenId);
     await buy(tokenId);
   };
   return (
