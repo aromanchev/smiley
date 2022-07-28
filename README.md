@@ -7,7 +7,6 @@ This is a dApp for selling my own nft, you can also clone and make your own coll
 
 - [web3](https://www.npmjs.com/package/web3)
 - [dotenv](https://www.npmjs.com/package/dotenv)
-- [@types/react](https://www.npmjs.com/package/@types/react)
 - [@openzeppelin/contracts](https://www.npmjs.com/package/@openzeppelin/contracts)
 - [ethers](https://www.npmjs.com/package/ethers)
 - [hardhat](https://www.npmjs.com/package/hardhat)
