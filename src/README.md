@@ -1,4 +1,5 @@
 # Smiley React.
 
-- ## Hooks
-  - [useWeb3](./hooks/README.md)
+## Hooks
+
+- [useWeb3](./hooks/README.md)
