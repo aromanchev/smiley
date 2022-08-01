@@ -9,3 +9,5 @@ typechain
 cache
 artifacts
 ipfs-collection
+
+build
