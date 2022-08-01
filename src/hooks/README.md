@@ -10,5 +10,6 @@ When I created this hook, I wanted to combine all the functions and call only on
 
 - `getAccounts(): Promise` - return array with wallet numbers which connected to dApp.
 - `mint(tokenId): Promise` - send request for mint nft.
+- `buy(tokenId): Promise` - send request for purchase nft.
 - `connectAccount(): Promise` - connect wallet to project.
 - `isConnected(): Promise` - return boolean value, whether the account is connected or not.
