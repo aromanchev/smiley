@@ -1,4 +1,4 @@
-# web3 in React
+# Hooks
 
 There you can see how to use contract functions in react-app.
 
