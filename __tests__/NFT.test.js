@@ -17,7 +17,7 @@ describe("Testing NFT smart contract", () => {
     expect(await nftContract.baseTokenURI()).to.equal(BASE_TOKEN_URI);
   });
 
-  it("should pass when owner want mint", async () => {
+  it("should pass when user want mint", async () => {
     await nftContract.mintNft(1);
     expect(await nftContract.allNfts(1)).to.exist
   });
