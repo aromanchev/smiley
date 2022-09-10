@@ -1,6 +1,4 @@
-# web3 in React
-
-There you can see how to use contract functions in react-app.
+# Hooks
 
 ## useWeb3() hook
 
