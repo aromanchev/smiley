@@ -17,7 +17,7 @@ The .env file contains several important variables.
 
 - `API_URL` - url of alchemy api or etc.
 - `PRIVATE_KEY` - your wallet private key.
-- `PUBLIC_KEY` - your wallet publick key.
+- `PUBLIC_KEY` - your wallet public key.
 - `ETHERSCAN_API` - you can work with your contract in etherscan. Check this [documentation](https://etherscan.io/register).
 - `BASE_TOKEN_URI` - folder where all nft metadata lie.
 - `REACT_APP_PINATA_CLOUD_URL` - base url for render nft images from pinata cloud. <br />
