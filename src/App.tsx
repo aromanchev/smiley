@@ -11,7 +11,7 @@ const App = () => {
   const [connected, setConnected] = useState(true);
   useEffect(() => {
     connectAccount();
-    isConnected().then((res) => setConnected(res));
+    isConnected().then(setConnected);
   }, []);
   return (
     <div className="smiley-dApp">
