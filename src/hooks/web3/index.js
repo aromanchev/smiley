@@ -24,9 +24,7 @@ export const useWeb3 = () => {
     }
     return await ethereum
       .request({ method: "eth_requestAccounts" })
-      .then((account) => {
-        account[0];
-      })
+      .then((account) => account[0])
       .catch((err) => err);
   };
 
